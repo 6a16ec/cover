@@ -1,4 +1,5 @@
-import threading
+import threading, time, os
+
 from comments import comments
 from reposts import reposts
 from subscribers import subscribers
@@ -46,11 +47,11 @@ def main():
 			# reposts()
 			# print("reposts ok", time.time() - last_time)
 			subscribers()
-			print("subscribers ok", time.time() - last_time)
+			print("subscribers ok")
 			results()
-			print("results ok", time.time() - last_time)
+			print("results ok")
 			draw()
-			print("draw ok", time.time() - last_time)
+			print("draw ok")
 
 			if(time.localtime()[5] < 55): time.sleep(55 - time.localtime()[5])
 			send()
