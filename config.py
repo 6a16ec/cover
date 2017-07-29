@@ -6,20 +6,20 @@ password = ''
 group_id = ''
 
 ## widgets ##
-most_popular_comment = 'on'			# 'on' or 'off' 
+most_popular_comment = 'on'		# 'on' or 'off' 
 most_popular_comments_count = 1		# the number of such elements
 
 most_active_commentator = 'on'		# 'on' or 'off' 
 most_active_commentators_count = 1	# the number of such elements
 
-most_active_reposter = 'on'			# 'on' or 'off' 
-most_active_reposters_count = 1	# the number of such elements
+most_active_reposter = 'on'		# 'on' or 'off' 
+most_active_reposters_count = 1		# the number of such elements
 
-most_active_liker = 'on'			# 'on' or 'off' 
+most_active_liker = 'on'		# 'on' or 'off' 
 most_active_likers_count = 1		# the number of such elements
 
-last_subscriber = 'on'				# 'on' or 'off' 
-last_subscribers_count = 1			# the number of such elements
+last_subscriber = 'on'			# 'on' or 'off' 
+last_subscribers_count = 1		# the number of such elements
 
 # monitoring config
 monitoring_time = '24' # number of hours (write '-1' to monitoring this day)
@@ -76,11 +76,11 @@ def main():
 	file_output("files/number_of_posts", number_of_posts)
 
 	widgets = ""
-	if(most_popular_comment == "on"): widgets += comments+'\n'
-	if(most_active_commentator == "on"): widgets += commentators+'\n'
-	if(most_active_reposter == "on"): widgets += reposts+'\n'
-	if(most_active_liker == "on"): widgets += likes+'\n'
-	if(last_subscriber == "on"): widgets += subscribers+'\n'
+	if(most_popular_comment == "on"): widgets += 'comments\n'
+	if(most_active_commentator == "on"): widgets += 'commentators\n'
+	if(most_active_reposter == "on"): widgets += 'reposts\n'
+	if(most_active_liker == "on"): widgets += 'likes\n'
+	if(last_subscriber == "on"): widgets += 'subscribers\n'
 
 	file_output("files/results_config", widgets)
 
