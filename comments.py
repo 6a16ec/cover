@@ -23,6 +23,31 @@ def file_output(name, output):
 	file.write(output)
 	file.close()
 
+def maximum(id, count):
+
+	max, id_max, last_i = 0, 0, 0
+
+	if(len(id) > 0):
+		for i, count_user in enumerate(count):
+			if (count_user > max):
+				max = count_user
+				id_max = id[i] 
+				last_i = i
+
+		id[last_i], count[last_i] = 0, 0
+
+		return id_max, max
+	else: return -1, -1
+
+def account_active(user_id):
+	vk = auth()
+	info = vk.method('users.get', {'user_ids': user_id})[0]
+	try:
+		info['deactivated']
+		return 0
+	except:
+		return 1
+
 def auth():
 	# read data from file
 	file = open(dir+'account', 'r')
@@ -36,6 +61,7 @@ def auth():
 
 
 def comments():
+
 	vk = auth()
 	monitoring_hours = file_input_number('monitoring_time')
 	if(monitoring_hours == -1):
@@ -95,58 +121,28 @@ def comments():
 
 
 	#find maximum comments
-	j = 0
+	already = 0
 	output = ''
 	count = file_input_number('count_commentators')
-	while(j < count):
-		i = 0
-		while(i < len(array_count)):
-			if(array_count[i] > max):
-				max = array_count[i]
-				id = array_id[i]
-				last_i = i
-			i += 1
-		#output data
 
-		if(id == 0): break
-
-		output += "commentator"
-		output += ' '
-		output += str(id)
-		output += ' '
-		output += str(max)
-		output += '\n'
-		j += 1
-		array_count[last_i] = 0
-		max = 0
-		id = 0
-
+	while(already < count):
+		id, max = maximum(array_id, array_count)
+		if(max == 0 or max == -1): break;
+		if(account_active(id)):
+			output += "commentator " + str(id) + " " + str(max) + "\n"
+			already += 1
 	file_output('results_commentators', output)
 	
 
 	#find maximum likes
-	j = 0
+	already = 0
 	output = ''
 	count = file_input_number('count_comments')
-	while(j < count):
-		i = 0
-		while(i < len(array_likes)):
-			if(array_likes[i] > max):
-				max = array_likes[i]
-				id = array_id[i]
-				last_i = i
-			i += 1
-		#output data
-		if(id == 0): break
 
-		output += "comment"
-		output += ' '
-		output += str(id)
-		output += ' '
-		output += str(max)
-		output += '\n'
-		j += 1
-		array_likes[last_i] = 0
-		max = 0
-		id = 0
+	while(already < count):
+		id, max = maximum(array_id, array_likes)
+		if(max == 0 or max == -1): break;
+		if(account_active(id)):
+			output += "comment " + str(id) + " " + str(max) + "\n"
+			already += 1
 	file_output('results_comments', output)
