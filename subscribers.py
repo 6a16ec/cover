@@ -60,4 +60,4 @@ def subscribers():
         j+=1
     f.close()
 
-if(__name__ == "__main__"): main()
+if(__name__ == "__main__"): subscribers()

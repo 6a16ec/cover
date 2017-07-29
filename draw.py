@@ -240,4 +240,4 @@ def draw():
 		avatar_paste(id_user, x_avatar, y_avatar, r_avatar, vk)
 		i+=1
 
-if(__name__ == "__main__"): main()
+if(__name__ == "__main__"): draw()

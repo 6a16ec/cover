@@ -147,4 +147,4 @@ def comments():
 			already += 1
 	file_output('results_comments', output)
 
-if(__name__ == "__main__"): main()
+if(__name__ == "__main__"): comments()

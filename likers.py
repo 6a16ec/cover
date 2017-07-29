@@ -44,7 +44,7 @@ def myfind(massiv,stroka,last_index):
         o=o+1
     return (-1)
     
-def liker():
+def likers():
     x = 0
     file = open(dir + 'exceptions', 'r')
     line = file.readline()
@@ -135,10 +135,6 @@ def file_output(name, output):
 	file.write(output)
 	file.close()
 
-def main():
-	while 1:
-		file_output("liker_pid", str(os.getpid()))
-		file_output("liker_time", str(time.localtime()[3])+" "+str(time.localtime()[4]))
-		liker()
 
-if(__name__ == "__main__"): main()
+
+if(__name__ == "__main__"): likers()

@@ -119,5 +119,5 @@ def reposts():
 			output += "repost " + str(id) + " " + str(max) + "\n"
 			already += 1
 	file_output('results_reposts', output)
-	
-if(__name__ == "__main__"): main()
+
+if(__name__ == "__main__"): reposts()

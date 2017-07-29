@@ -33,5 +33,5 @@ def send():
 	photo = {'photo': open(dir+cover_name, 'rb')}
 	r = requests.post(url, files=photo)
 	vk.method('photos.saveOwnerCoverPhoto', {'hash': r.json()['hash'], 'photo': r.json()['photo']})
-	
-if(__name__ == "__main__"): main()
+
+if(__name__ == "__main__"): send()

@@ -41,5 +41,5 @@ def results():
 
 
 	file_output("results", results)
-	
-if(__name__ == "__main__"): main()
+
+if(__name__ == "__main__"): results()
