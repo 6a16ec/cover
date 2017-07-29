@@ -34,7 +34,7 @@ def maximum(id, count):
 				id_max = id[i] 
 				last_i = i
 
-		id[last_i], count[last_i] = 0, 0
+		count[last_i] =  0
 
 		return id_max, max
 	else: return -1, -1
