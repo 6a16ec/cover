@@ -69,8 +69,9 @@ def ReplaceDirInFiles():
 def main():
 
 	ReplaceDirInFiles()	
-	os.mkdir("files")
-
+	try: os.mkdir("files")
+	except: ok = "ok"
+	
 	file_output("files/account", phone_number_or_email+'\n'+password+'\n')
 	file_output("files/monitoring_time", monitoring_time)
 	file_output("files/number_of_posts", number_of_posts)
