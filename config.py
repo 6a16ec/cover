@@ -73,6 +73,7 @@ def main():
 	except: ok = "ok"
 	
 	file_output("files/account", phone_number_or_email+'\n'+password+'\n')
+	file_output("files/group_id", group_id)
 	file_output("files/monitoring_time", monitoring_time)
 	file_output("files/number_of_posts", number_of_posts)
 
