@@ -1,7 +1,7 @@
 import time, vk_api
 
 
-dir = '/work/cover/files/'
+dir = ''
 
 def file_input(name):
 	file_name = dir + name
@@ -59,3 +59,5 @@ def subscribers():
             p+=1
         j+=1
     f.close()
+
+if(__name__ == "__main__"): main()

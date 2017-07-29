@@ -1,7 +1,7 @@
 import time, vk_api
 
 #direction with all files
-dir = '/work/cover/files/'
+dir = ''
 
 def file_input(name):
 	file_name = dir + name
@@ -146,3 +146,5 @@ def comments():
 			output += "comment " + str(id) + " " + str(max) + "\n"
 			already += 1
 	file_output('results_comments', output)
+
+if(__name__ == "__main__"): main()

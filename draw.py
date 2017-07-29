@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
 from pycbrf.toolbox import ExchangeRates
 
-dir = '/work/cover/files/'
+dir = ''
 cover_name = 'cover.png'
 template = 'template.png'
 
@@ -239,3 +239,5 @@ def draw():
 		r_avatar = int(coordinates[i].split(' ')[12])
 		avatar_paste(id_user, x_avatar, y_avatar, r_avatar, vk)
 		i+=1
+
+if(__name__ == "__main__"): main()

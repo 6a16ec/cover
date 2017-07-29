@@ -1,7 +1,7 @@
 import vk_api, requests
 from PIL import Image
 
-dir = '/work/cover/files/'
+dir = ''
 cover_name = 'cover.png'
 template = 'template.png'
 
@@ -33,3 +33,5 @@ def send():
 	photo = {'photo': open(dir+cover_name, 'rb')}
 	r = requests.post(url, files=photo)
 	vk.method('photos.saveOwnerCoverPhoto', {'hash': r.json()['hash'], 'photo': r.json()['photo']})
+	
+if(__name__ == "__main__"): main()

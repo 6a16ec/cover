@@ -7,7 +7,7 @@ from results import results
 from draw import draw
 from send import send
 
-dir = '/work/cover/files/'
+dir = ''
 
 def file_input(name):
 	file_name = dir + name
@@ -56,4 +56,5 @@ def main():
 			if(time.localtime()[5] < 55): time.sleep(55 - time.localtime()[5])
 			send()
 			print("send ok", time.localtime()[3], time.localtime()[4])
-main()
+			
+if(__name__ == "__main__"): main()

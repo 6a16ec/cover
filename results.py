@@ -1,4 +1,4 @@
-dir = "/work/cover/files/"
+dir = ''
 
 def file_input(name):
 	file_name = dir + name
@@ -41,3 +41,5 @@ def results():
 
 
 	file_output("results", results)
+	
+if(__name__ == "__main__"): main()

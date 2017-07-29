@@ -1,6 +1,6 @@
 import vk_api, time, os
 
-dir='/work/cover/files/'
+dir = ''
 
 def auth():
     # read data from file
@@ -140,4 +140,5 @@ def main():
 		file_output("liker_pid", str(os.getpid()))
 		file_output("liker_time", str(time.localtime()[3])+" "+str(time.localtime()[4]))
 		liker()
-main()
+
+if(__name__ == "__main__"): main()
