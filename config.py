@@ -1,3 +1,34 @@
+#-#-# configuration file #-#-#
+
+# information for vk
+phone_number_or_email = ''
+password = ''
+group_id = ''
+
+## widgets ##
+most_popular_comment = 'on'			# 'on' or 'off' 
+most_popular_comments_count = 1		# the number of such elements
+
+most_active_commentator = 'on'		# 'on' or 'off' 
+most_active_commentators_count = 1	# the number of such elements
+
+most_active_reposter = 'on'			# 'on' or 'off' 
+most_active_reposters_count = 1	# the number of such elements
+
+most_active_liker = 'on'			# 'on' or 'off' 
+most_active_likers_count = 1		# the number of such elements
+
+last_subscriber = 'on'				# 'on' or 'off' 
+last_subscribers_count = 1			# the number of such elements
+
+# monitoring config
+monitoring_time = '24' # number of hours (write '-1' to monitoring this day)
+number_of_posts = '50'
+
+
+
+
+
 import os
 
 dir = os.getcwd() + "/"
@@ -35,5 +66,31 @@ def ReplaceDirInFiles():
 		file_output(script, text_new)
 
 
-if(__name__ == "__main__"): ReplaceDirInFiles()
+def main():
+
+	ReplaceDirInFiles()	
+	os.mkdir("files")
+
+	file_output("files/account", phone_number_or_email+'\n'+password+'\n')
+	file_output("files/monitoring_time", monitoring_time)
+	file_output("files/number_of_posts", number_of_posts)
+
+	widgets = ""
+	if(most_popular_comment == "on"): widgets += comments+'\n'
+	if(most_active_commentator == "on"): widgets += commentators+'\n'
+	if(most_active_reposter == "on"): widgets += reposts+'\n'
+	if(most_active_liker == "on"): widgets += likes+'\n'
+	if(last_subscriber == "on"): widgets += subscribers+'\n'
+
+	file_output("files/results_config", widgets)
+
+	file_output("files/count_comments", most_popular_comments_count)
+	file_output("files/count_commentators", most_active_commentators_count)
+	file_output("files/count_reposts", most_active_reposters_count)
+	file_output("files/count_likes", most_active_likers_count)
+	file_output("files/count_subscribers", last_subscribers_count)
+
+
+
+if(__name__ == "__main__"): main()
 
