@@ -1,4 +1,6 @@
 #-#-# configuration file #-#-#
+add_widget = "" # not correct
+add_other_widget = "" # not correct
 
 # information for vk
 phone_number_or_email = ''
@@ -9,19 +11,28 @@ exceptions = ''
 
 ## widgets ##
 most_popular_comment = 'on'		# 'on' or 'off' 
-most_popular_comments_count = '1'		# the number of such elements
+most_popular_comments_count = '1'	# the number of such elements
+add_widget += "comment" 
+
 
 most_active_commentator = 'on'		# 'on' or 'off' 
 most_active_commentators_count = '1'	# the number of such elements
+add_widget += "commentator" 
 
 most_active_reposter = 'on'		# 'on' or 'off' 
-most_active_reposters_count = '1'		# the number of such elements
+most_active_reposters_count = '1'	# the number of such elements
+add_widget += "repost" 
 
 most_active_liker = 'on'		# 'on' or 'off' 
 most_active_likers_count = '1'		# the number of such elements
+add_widget += "liker" 
 
 last_subscriber = 'on'			# 'on' or 'off' 
 last_subscribers_count = '1'		# the number of such elements
+add_widget += "subscriber" 
+
+time = 'on'			# 'on' or 'off' 
+add_other_widget += "time" 
 
 # monitoring config
 monitoring_time = '24' # number of hours (write '-1' to monitoring this day)
@@ -77,6 +88,8 @@ def main():
 	file_output("files/monitoring_time", monitoring_time)
 	file_output("files/number_of_posts", number_of_posts)
 	file_output("files/exceptions", exceptions)
+	file_output("files/results_information", add_widget)
+	file_output("files/widget", add_other_widget)
 
 	widgets = ""
 	if(most_popular_comment == "on"): 
