@@ -102,7 +102,10 @@ def letters():
 			res = requests.get("http://api.openweathermap.org/data/2.5/weather",
 							   params={'id': city_id, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
 			data = res.json()
-			temperature_stroka = str(data['main']['temp'])
+			uni = unicode(str(data['main']['temp'])[0:2] + "°" + "C", "UTF-8")
+			if uni[0] != "-":
+				uni = "+" + uni
+			temperature_stroka = uni
 			shrift = massiv_temperature[3]
 			colors = massiv_temperature[4:7]
 			size_letter = int(massiv_temperature[7])
@@ -149,6 +152,7 @@ def letters():
 			string_of_best = d[0]['first_name'] + '\n' + d[0]['last_name']
 		if coordinates_spisok[13] == '0':
 			string_of_best = d[0]['first_name']
+		print(d)
 		draw.text((int(coordinates_spisok[3]), int(coordinates_spisok[4])), string_of_best, font=font,
 				  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
 		if spisok[0] != 'subscriber':
@@ -158,6 +162,4 @@ def letters():
 	im1.save(dir + 'cover.png')
 	coordinates.close()
 	file.close()
-
-
 if(__name__ == "__main__"): reposts()
