@@ -49,4 +49,4 @@ def main():
 if(__name__ == "__main__"):
 	while 1:
 		main()
-		time.sleep(60-time.localtime()[4])
+		time.sleep(60-time.localtime()[5])
