@@ -49,7 +49,7 @@ import os
 
 dir = os.getcwd() + "/"
 
-scripts = ["all.py", "comments.py", "reposts.py", "likers.py", "subscribers.py", "results.py", "draw.py", "send.py", "protection.py"]
+scripts = ["all.py", "comments.py", "reposts.py", "likers.py", "subscribers.py", "results.py", "draw.py", "letters.py", "send.py", "protection.py"]
 
 def file_input(name):
 	file_name = dir + name
