@@ -4,6 +4,8 @@
 phone_number_or_email = ''
 password = ''
 group_id = ''
+#People who do not need to be considered. Through a space.(optional)
+exceptions = ''
 
 ## widgets ##
 most_popular_comment = 'on'		# 'on' or 'off' 
@@ -76,21 +78,37 @@ def main():
 	file_output("files/group_id", group_id)
 	file_output("files/monitoring_time", monitoring_time)
 	file_output("files/number_of_posts", number_of_posts)
+	file_output("files/exceptions", exceptions)
 
 	widgets = ""
-	if(most_popular_comment == "on"): widgets += 'comments\n'
-	if(most_active_commentator == "on"): widgets += 'commentators\n'
-	if(most_active_reposter == "on"): widgets += 'reposts\n'
-	if(most_active_liker == "on"): widgets += 'likes\n'
-	if(last_subscriber == "on"): widgets += 'subscribers\n'
+	if(most_popular_comment == "on"): 
+		widgets += 'comments\n'
+		file_output("files/count_comments", most_popular_comments_count)
+
+	if(most_active_commentator == "on"): 
+		widgets += 'commentators\n'
+		file_output("files/count_commentators", most_active_commentators_count)
+
+	if(most_active_reposter == "on"): 
+		widgets += 'reposts\n'
+		file_output("files/count_reposts", most_active_reposters_count)
+
+	if(most_active_liker == "on"): 
+		widgets += 'likes\n'
+		file_output("files/count_likes", most_active_likers_count)
+
+	if(last_subscriber == "on"): 
+		widgets += 'subscribers\n'
+		file_output("files/count_subscribers", last_subscribers_count)
+
 
 	file_output("files/results_config", widgets)
 
-	file_output("files/count_comments", most_popular_comments_count)
-	file_output("files/count_commentators", most_active_commentators_count)
-	file_output("files/count_reposts", most_active_reposters_count)
-	file_output("files/count_likes", most_active_likers_count)
-	file_output("files/count_subscribers", last_subscribers_count)
+	
+	
+	
+	
+	
 
 
 
