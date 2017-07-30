@@ -94,23 +94,23 @@ def main():
 	widgets = ""
 	if(most_popular_comment == "on"): 
 		widgets += 'comments\n'
-		file_output("files/count_comments", most_popular_comments_count)
+	file_output("files/count_comments", most_popular_comments_count)
 
 	if(most_active_commentator == "on"): 
 		widgets += 'commentators\n'
-		file_output("files/count_commentators", most_active_commentators_count)
+	file_output("files/count_commentators", most_active_commentators_count)
 
 	if(most_active_reposter == "on"): 
 		widgets += 'reposts\n'
-		file_output("files/count_reposts", most_active_reposters_count)
+	file_output("files/count_reposts", most_active_reposters_count)
 
 	if(most_active_liker == "on"): 
 		widgets += 'likes\n'
-		file_output("files/count_likes", most_active_likers_count)
+	file_output("files/count_likes", most_active_likers_count)
 
 	if(last_subscriber == "on"): 
 		widgets += 'subscribers\n'
-		file_output("files/count_subscribers", last_subscribers_count)
+	file_output("files/count_subscribers", last_subscribers_count)
 
 
 	file_output("files/results_config", widgets)

@@ -101,7 +101,6 @@ def likers():
     f.close()
     index_big=[[0 for i in range(2)] for i in range(n_max)]
     j=0
-    print(likers)
     #zapolnenie massiva index_big naibolshymi elementami
     while j<n_max :
         max = 0
@@ -138,7 +137,7 @@ def file_output(name, output):
 
 
 if(__name__ == "__main__"): 
-    if(len(sys.argv[]) == 1):
+    if(len(sys.argv) == 1):
         likers()
     else:
         while 1: likers()
