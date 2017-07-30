@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import time, vk_api
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
@@ -137,7 +138,8 @@ def letters():
 	while i < r:
 		line = file.readline()
 		spisok = line.split()
-		d = vk.method('users.get', {'user_ids': spisok[1]})
+		if(spisok[0]!='error'):
+			d = vk.method('users.get', {'user_ids': spisok[1]})
 		line = coordinates.readline()
 		coordinates_spisok = line.split()
 		shrift = coordinates_spisok[7]
@@ -146,12 +148,15 @@ def letters():
 		font = ImageFont.truetype(shrift, size_letter)
 		# formiruyo vid stroki v zavisimosti ot flashka
 		string_of_best = 'hoi'
-		if coordinates_spisok[13] == '1':
-			string_of_best = d[0]['first_name'] + ' ' + d[0]['last_name']
-		if coordinates_spisok[13] == '2':
-			string_of_best = d[0]['first_name'] + '\n' + d[0]['last_name']
-		if coordinates_spisok[13] == '0':
-			string_of_best = d[0]['first_name']
+		if (spisok[0]!= 'error'):
+			if coordinates_spisok[13] == '1':
+				string_of_best = d[0]['first_name'] + ' ' + d[0]['last_name']
+			if coordinates_spisok[13] == '2':
+				string_of_best = d[0]['first_name'] + '\n' + d[0]['last_name']
+			if coordinates_spisok[13] == '0':
+				string_of_best = d[0]['first_name']
+		else:
+			string_of_best = unicode("Попади\nв топ", "UTF-8")
 		print(d)
 		draw.text((int(coordinates_spisok[3]), int(coordinates_spisok[4])), string_of_best, font=font,
 				  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
@@ -162,4 +167,4 @@ def letters():
 	im1.save(dir + 'cover.png')
 	coordinates.close()
 	file.close()
-if(__name__ == "__main__"): reposts()
+if(__name__ == "__main__"): letters()
