@@ -5,6 +5,7 @@ from comments import comments
 from reposts import reposts
 from subscribers import subscribers
 from results import results
+from letters import letters
 from draw import draw
 from send import send
 
@@ -51,6 +52,7 @@ def main():
 			#print("subscribers ok")
 			results()
 			print("results ok")
+			letters()
 			draw()
 			print("draw ok")
 
