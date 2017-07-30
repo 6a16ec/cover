@@ -71,8 +71,6 @@ def ReplaceDirInFiles():
 def main():
 
 	ReplaceDirInFiles()	
-	try: os.mkdir("files")
-	except: ok = "ok"
 	
 	file_output("files/account", phone_number_or_email+'\n'+password+'\n')
 	file_output("files/group_id", group_id)
