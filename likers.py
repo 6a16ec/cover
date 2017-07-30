@@ -140,4 +140,7 @@ if(__name__ == "__main__"):
     if(len(sys.argv) == 1):
         likers()
     else:
-        while 1: likers()
+        while 1: 
+            file_output("liker_pid", str(os.getpid())) 
+            file_output("liker_time", str(time.localtime()[3])+" "+str(time.localtime()[4])) 
+            likers()
