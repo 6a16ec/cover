@@ -74,15 +74,27 @@ def paste(name_main, name_paste, x, y):
 	main.save(name_main)
 
 def avatar_paste(id, x, y, r, vk):
-	link = vk.method('users.get', {'user_ids': id, 'fields': 'photo_100'})[0]['photo_100']
-	file_name = wget.download(link, dir)
-	print(" ")
-	print(file_name)
-	circle(file_name, dir+"avatar.png")
-	resolution("avatar.png", "avatar.png", r, r)
-	paste(dir+cover_name, dir+"avatar.png", x, y)
-	os.remove(dir+"avatar.png")
-	os.remove(file_name)
+	if(id != -1):
+
+		link = vk.method('users.get', {'user_ids': id, 'fields': 'photo_100'})[0]['photo_100']
+		
+		if(link != 'https://vk.com/images/camera_100.png'):
+			file_name = wget.download(link, dir)
+			circle(file_name, dir+"avatar.png")
+			resolution("avatar.png", "avatar.png", r, r)
+			paste(dir+cover_name, dir+"avatar.png", x, y)
+			os.remove(dir+"avatar.png")
+			os.remove(file_name)
+		else:
+			resolution("camera.png", "avatar.png", r, r)
+			paste(dir+cover_name, dir+"avatar.png", x, y)
+			os.remove(dir+"avatar.png")
+	else:
+		resolution("error.png", "avatar.png", r, r)
+		paste(dir+cover_name, dir+"avatar.png", x, y)
+		os.remove(dir+"avatar.png")
+
+
 
 def draw():
 
@@ -94,7 +106,9 @@ def draw():
 	i = 0
 	while i < len(results):
 
+		item = results[i].split(' ')[0]
 		id_user = int(results[i].split(' ')[1])
+		if(item == "error"): id_user = -1;
 
 		x_avatar = int(coordinates[i].split(' ')[1])
 		y_avatar = int(coordinates[i].split(' ')[2])
