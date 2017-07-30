@@ -2,7 +2,7 @@
 import time, vk_api
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
-dir = ''
+dir = '/home/user/newcover/cover/files/'
 def auth():
 	# read data from file
 	file = open(dir+'account', 'r')
@@ -156,11 +156,11 @@ def letters():
 			if coordinates_spisok[13] == '0':
 				string_of_best = d[0]['first_name']
 		else:
-			string_of_best = "Попади\nв топ"
+			string_of_best = unicode("Попади\nв топ", "UTF-8")
 		print(d)
 		draw.text((int(coordinates_spisok[3]), int(coordinates_spisok[4])), string_of_best, font=font,
 				  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
-		if spisok[0] != 'subscriber':
+		if spisok[0] != 'subscriber' and spisok[0]!='error':
 			draw.text((int(coordinates_spisok[5]), int(coordinates_spisok[6])), spisok[2], font=font,
 					  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
 		i += 1
