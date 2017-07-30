@@ -47,7 +47,7 @@ def main():
 			# print("comments ok", time.time() - last_time)
 			# reposts()
 			# print("reposts ok", time.time() - last_time)
-			#subscribers()
+			subscribers()
 			#print("subscribers ok")
 			results()
 			print("results ok")
