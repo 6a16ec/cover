@@ -26,6 +26,7 @@ add_widget += "repost"
 most_active_liker = 'on'		# 'on' or 'off' 
 most_active_likers_count = '1'		# the number of such elements
 add_widget += "liker" 
+array_size = 100 # whaaaaaaaaat!!!??!?!?!!?
 
 last_subscriber = 'on'			# 'on' or 'off' 
 last_subscribers_count = '1'		# the number of such elements
@@ -90,6 +91,7 @@ def main():
 	file_output("files/exceptions", exceptions)
 	file_output("files/results_information", add_widget)
 	file_output("files/widget", add_other_widget)
+	file_output("files/array_size", array_size)
 
 	widgets = ""
 	if(most_popular_comment == "on"): 
