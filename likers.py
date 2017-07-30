@@ -1,4 +1,4 @@
-import vk_api, time, os
+import vk_api, time, os, sys
 
 dir = ''
 
@@ -137,4 +137,8 @@ def file_output(name, output):
 
 
 
-if(__name__ == "__main__"): likers()
+if(__name__ == "__main__"): 
+    if(len(sys.argv[]) == 1):
+        likers()
+    else:
+        while 1: likers()

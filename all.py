@@ -50,6 +50,7 @@ def main():
 			print("subscribers ok")
 			results()
 			print("results ok")
+			letters()
 			draw()
 			print("draw ok")
 
