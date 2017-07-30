@@ -2,7 +2,7 @@
 import time, vk_api
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
-dir = '/home/user/newcover/cover/files/'
+dir = ''
 def auth():
 	# read data from file
 	file = open(dir+'account', 'r')

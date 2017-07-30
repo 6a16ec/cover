@@ -77,7 +77,7 @@ def avatar_paste(id, x, y, r, vk):
 	if(id != -1):
 
 		link = vk.method('users.get', {'user_ids': id, 'fields': 'photo_100'})[0]['photo_100']
-		
+
 		if(link != 'https://vk.com/images/camera_100.png'):
 			file_name = wget.download(link, dir)
 			circle(file_name, dir+"avatar.png")
@@ -99,7 +99,6 @@ def avatar_paste(id, x, y, r, vk):
 def draw():
 
 	vk = auth()
-	letters()
 
 	results = file_input("results")
 	coordinates = file_input("results_information")
