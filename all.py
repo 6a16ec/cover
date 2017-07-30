@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 import threading, time, os
 
 from comments import comments
@@ -7,7 +8,7 @@ from results import results
 from draw import draw
 from send import send
 
-dir = ''
+dir = '/home/user/newcover/cover/files/'
 
 def file_input(name):
 	file_name = dir + name
@@ -46,11 +47,10 @@ def main():
 			# print("comments ok", time.time() - last_time)
 			# reposts()
 			# print("reposts ok", time.time() - last_time)
-			subscribers()
-			print("subscribers ok")
+			#subscribers()
+			#print("subscribers ok")
 			results()
 			print("results ok")
-			letters()
 			draw()
 			print("draw ok")
 
