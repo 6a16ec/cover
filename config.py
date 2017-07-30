@@ -26,7 +26,7 @@ add_widget += "repost"
 most_active_liker = 'on'		# 'on' or 'off' 
 most_active_likers_count = '1'		# the number of such elements
 add_widget += "liker" 
-array_size = 100 # whaaaaaaaaat!!!??!?!?!!?
+array_size = '100' # whaaaaaaaaat!!!??!?!?!!?
 
 last_subscriber = 'on'			# 'on' or 'off' 
 last_subscribers_count = '1'		# the number of such elements
