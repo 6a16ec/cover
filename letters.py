@@ -156,7 +156,7 @@ def letters():
 			if coordinates_spisok[13] == '0':
 				string_of_best = d[0]['first_name']
 		else:
-			string_of_best = unicode("Попади\nв топ", "UTF-8")
+			string_of_best = "Попади\nв топ"
 		print(d)
 		draw.text((int(coordinates_spisok[3]), int(coordinates_spisok[4])), string_of_best, font=font,
 				  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
