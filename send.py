@@ -14,12 +14,11 @@ def file_input_number(name):
 
 def auth():
 	# read data from file
-	file = open(dir+'account', 'r')
-	login = file.readline()[:-1]
-	password = file.readline()[:-1]
+	file = open(dir+'api_key', 'r')
+	api_key = file.readline()[:-1]
 	file.close()
 	# authorization
-	vk = vk_api.VkApi(login = login, password = password)
+	vk = vk_api.VkApi(token = api_key)
 	vk.auth()
 	return vk
 

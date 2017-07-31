@@ -5,6 +5,7 @@ add_other_widget = "" # not correct
 # information for vk
 phone_number_or_email = ''
 password = ''
+api_key = ''
 group_id = '149247243'
 #People who do not need to be considered. Through a space.(optional)
 exceptions = '322601439 225281892 137982380'
@@ -88,6 +89,7 @@ def main():
 	
 	file_output("files/account", phone_number_or_email+'\n'+password+'\n')
 	file_output("files/group_id", group_id)
+	file_output("files/api_key", api_key)
 	file_output("files/monitoring_time", monitoring_time)
 	file_output("files/number_of_posts", number_of_posts)
 	file_output("files/exceptions", exceptions)
