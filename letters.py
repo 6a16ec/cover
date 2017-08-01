@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
-import time, vk_api
+import time, vk_api, requests
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
-dir = ''
+dir = '/home/user/newcover/cover/files/'
 def auth():
 	# read data from file
 	file = open(dir+'account', 'r')
@@ -126,7 +126,7 @@ def letters():
 		time_now = datetime.now()
 		time_date = datetime.strftime(time_now, "%H:%M")
 		state = str(int(time_date[0:2]) % 24) if time_date[3:5] != '59' else str((int(time_date[0:2]) + 1) % 24)
-		time_date = state + ':' + str((int(time_date[3:5]) + 1) % 60).rjust(2, '0')
+		time_date = state.rjust(2, '0') + ':' + str((int(time_date[3:5]) + 1) % 60).rjust(2, '0')
 		draw.text((int(massiv_time[1]), int(massiv_time[2])), time_date,
 				  font=font, fill=(int(colors[0]), int(colors[1]), int(colors[2])))
 	file = open(dir + 'results', 'r')
@@ -157,7 +157,6 @@ def letters():
 				string_of_best = d[0]['first_name']
 		else:
 			string_of_best = "Попади\nв топ"
-		print(d)
 		draw.text((int(coordinates_spisok[3]), int(coordinates_spisok[4])), string_of_best, font=font,
 				  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
 		if spisok[0] != 'subscriber' and spisok[0]!='error':
