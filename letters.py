@@ -103,7 +103,7 @@ def letters():
 			res = requests.get("http://api.openweathermap.org/data/2.5/weather",
 							   params={'id': city_id, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
 			data = res.json()
-			uni = unicode(str(data['main']['temp'])[0:2] + "°" + "C", "UTF-8")
+			uni = str(data['main']['temp'])[0:2] + "°" + "C"
 			if uni[0] != "-":
 				uni = "+" + uni
 			temperature_stroka = uni
