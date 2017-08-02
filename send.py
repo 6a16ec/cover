@@ -15,7 +15,7 @@ def file_input_number(name):
 def auth():
 	# read data from file
 	file = open(dir+'api_key', 'r')
-	api_key = file.readline()[:-1]
+	api_key = file.readline()
 	file.close()
 	# authorization
 	vk = vk_api.VkApi(token = api_key)
