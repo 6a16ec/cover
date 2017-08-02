@@ -123,7 +123,7 @@ def likers():
     p=0
     # zapis v fail resultatov
     while j<len(index_big):
-        if p<n_max-6  and myfind(massiv_exceptions,index_big[j][0],len_massiv)==-1 and isbanned(index_big[j][0])!=-1:
+        if p<n_max-6  and myfind(massiv_exceptions,index_big[j][0],len_massiv-1)==-1 and isbanned(index_big[j][0])!=-1:
             f.write('like '+str(index_big[j][0])+' '+str(index_big[j][1])+'\n')
             p+=1
         j=j+1
