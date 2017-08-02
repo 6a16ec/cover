@@ -1,6 +1,6 @@
 import vk_api, time, os, sys
 
-dir = ''
+dir = '/home/user/newcover/cover/files/'
 
 def auth():
     # read data from file
@@ -49,13 +49,14 @@ def likers():
     file = open(dir + 'exceptions', 'r')
     line = file.readline()
     massiv_exceptions=line.split()
+    len_massiv=len(massiv_exceptions)
     file.close()
     f = open(dir + 'array_size', 'r')
     array_size = int(f.read())
     f.close()
     likers = [[0 for i in range(2)] for i in range(array_size)]
     vk=auth()
-    id_group = '-'+str(group_id())
+    id_group = '-83678526'
     d = vk.method('newsfeed.get',
                   {'filters': 'post', 'return_banned': 1, 'start_time': time.time() - 86400, 'end_time': time.time(),
                    'source_ids': id_group, 'count': 50})['items']
@@ -122,7 +123,7 @@ def likers():
     p=0
     # zapis v fail resultatov
     while j<len(index_big):
-        if p<n_max-6  and myfind(massiv_exceptions,index_big[j][0],2)==-1 and isbanned(index_big[j][0])!=-1:
+        if p<n_max-6  and myfind(massiv_exceptions,index_big[j][0],len_massiv)==-1 and isbanned(index_big[j][0])!=-1:
             f.write('like '+str(index_big[j][0])+' '+str(index_big[j][1])+'\n')
             p+=1
         j=j+1
@@ -144,3 +145,4 @@ if(__name__ == "__main__"):
             file_output("liker_pid", str(os.getpid())) 
             file_output("liker_time", str(time.localtime()[3])+" "+str(time.localtime()[4])) 
             likers()
+            print('hoi')
