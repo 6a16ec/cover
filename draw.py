@@ -46,7 +46,7 @@ def resolution(name, name_res, width, height):
 
 	
 def circle(name, name_res):
-	image = Image.open(name) 
+	image = Image.open(name).convert("RGBA")
 	width = image.size[0] 
 	height = image.size[1] 
 	image_new = Image.new("RGBA", (width,height), (0,0,0,0))
