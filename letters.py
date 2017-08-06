@@ -156,7 +156,10 @@ def letters():
 			if coordinates_spisok[13] == '0':
 				string_of_best = d[0]['first_name']
 		else:
-			string_of_best = "Попади\nв топ"
+			if coordinates_spisok[13] == '1':
+				string_of_best = "Попади в топ"
+			if coordinates_spisok[13] == '2':
+				string_of_best = "Попади\nв топ"
 		draw.text((int(coordinates_spisok[3]), int(coordinates_spisok[4])), string_of_best, font=font,
 				  fill=(int(colors[0]), int(colors[1]), int(colors[2])))
 		if spisok[0] != 'subscriber' and spisok[0]!='error':
