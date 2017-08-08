@@ -42,7 +42,7 @@ def main():
 		if(h != time.localtime()[3] or time.localtime()[4] - m >= 3):
 			pid = file_input_number("liker"+"_pid")
 			os.system("kill "+str(pid))
-			os.system("nohup python "+work_direction+"likers.py &")
+			os.system("nohup python "+work_direction+"likers.py 1 &")
 	except:
 		os.system("nohup python "+work_direction+"likers.py 1 &")
 
