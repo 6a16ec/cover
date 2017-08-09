@@ -5,7 +5,7 @@ add_other_widget = "" # not correct
 # information for vk
 phone_number_or_email = '79100063944'
 password = 'hdsk48vGH'
-api_key = '9927d19e7978f9176792b922aba11ea839e86e9cdeb371ab9a5e68d74e9d7480a345e4b26fae60b8d9c26'
+api_key = '019de0e560b1fb01ee2fd30c05b7bc599193964c2c6e69ab311742b48c544c9830797cf8715f26e2532eb'
 group_id = '60634763'
 #People who do not need to be considered. Through a space.(optional)
 exceptions = ''
@@ -34,9 +34,9 @@ last_subscribers_count = '1'            # the number of such elements
 add_widget += "subscriber 700 250 750 260 0 0 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 50 50 50 25 40 1\n"
 
 time = 'on'                     # 'on' or 'off'
-add_other_widget += "time 0 210 /usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf 200 200 200 40\n"
+add_other_widget += "time 0 260 /usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf 200 200 200 40\n"
 
-add_other_widget += "temperature 150 210 /usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf 200 200 200 40 Syktyvkar,RU"
+add_other_widget += "temperature 150 260 /usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf 200 200 200 40 Syktyvkar,RU"
 
 # monitoring config
 monitoring_time = '24' # number of hours (write '-1' to monitoring this day)
