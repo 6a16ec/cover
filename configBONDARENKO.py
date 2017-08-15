@@ -18,20 +18,20 @@ add_widget += "comment"
 
 most_active_commentator = 'on'		# 'on' or 'off' 
 most_active_commentators_count = '1'	# the number of such elements
-add_widget += "commentator 35 137 90 145 225 123 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 50 2\n" 
+add_widget += "commentator 35 137 90 145 225 123 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 45 2\n" 
 
 most_active_reposter = 'on'		# 'on' or 'off' 
 most_active_reposters_count = '1'	# the number of such elements
-add_widget += "repost 195 26 250 32 362 11 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 50 2\n" 
+add_widget += "repost 195 26 250 32 362 11 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 45 2\n" 
 
 most_active_liker = 'on'		# 'on' or 'off' 
 most_active_likers_count = '1'		# the number of such elements
-add_widget += "liker 35 26 90 32 168 11 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 50 2\n" 
+add_widget += "liker 35 26 90 32 168 11 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 45 2\n" 
 array_size = '1000' # whaaaaaaaaat!!!??!?!?!!?
 
 last_subscriber = 'on'			# 'on' or 'off' 
 last_subscribers_count = '1'		# the number of such elements
-add_widget += "subscriber 520 26 575 32 0 0 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 50 2\n" 
+add_widget += "subscriber 520 26 575 32 0 0 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 0 0 0 15 45 2\n" 
 
 time = 'off'			# 'on' or 'off' 
 # monitoring config
