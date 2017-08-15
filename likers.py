@@ -1,6 +1,6 @@
 import vk_api, time, os, sys
 
-dir = '/home/user/newcover/cover/files/'
+dir = '/home/valya/cover-master/files/'
 
 def auth():
     # read data from file
@@ -56,7 +56,7 @@ def likers():
     f.close()
     likers = [[0 for i in range(2)] for i in range(array_size)]
     vk=auth()
-    id_group = '-83678526'
+    id_group = group_id()
     d = vk.method('newsfeed.get',
                   {'filters': 'post', 'return_banned': 1, 'start_time': time.time() - 86400, 'end_time': time.time(),
                    'source_ids': id_group, 'count': 50})['items']
