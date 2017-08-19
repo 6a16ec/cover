@@ -5,7 +5,7 @@ add_other_widget = "" # not correct
 # information for vk
 phone_number_or_email = '79100063944'
 password = 'hdsk48vGH'
-api_key = ''
+api_key = '8180bd9b1d52d7be4c991a1dc9d7f8e94e248708cea64eceaec95e6f1d96d2c98671e94f69ccccc938fa9'
 group_id = '149247243'
 #People who do not need to be considered. Through a space.(optional)
 exceptions = '322601439 225281892 137982380'
