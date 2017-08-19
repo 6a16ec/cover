@@ -3,8 +3,8 @@ add_widget = "" # not correct
 add_other_widget = "" # not correct
 
 # information for vk
-phone_number_or_email = ''
-password = ''
+phone_number_or_email = '79100063944'
+password = 'hdsk48vGH'
 api_key = ''
 group_id = '62483072'
 #People who do not need to be considered. Through a space.(optional)
