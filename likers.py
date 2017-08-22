@@ -1,6 +1,6 @@
-import vk_api, time, os, sys
+import vk_api, time, os
 
-dir = '/home/valya/cover-master/files/'
+dir='/home/user/hey/files/'
 
 def auth():
     # read data from file
@@ -44,22 +44,33 @@ def myfind(massiv,stroka,last_index):
         o=o+1
     return (-1)
     
-def likers():
+def liker():
     x = 0
     file = open(dir + 'exceptions', 'r')
     line = file.readline()
     massiv_exceptions=line.split()
-    len_massiv=len(massiv_exceptions)
     file.close()
     f = open(dir + 'array_size', 'r')
     array_size = int(f.read())
     f.close()
     likers = [[0 for i in range(2)] for i in range(array_size)]
     vk=auth()
-    id_group = group_id()
+    id_group = '-'+str(group_id())
+    file = open(dir + 'monitoring_time', 'r')
+    line = file.readline()
+    line = line[0:len(line)-1]
+    monitoring_time=int(line)
+    print(monitoring_time)
+    file.close()
+    file = open(dir + 'number_of_posts', 'r')
+    line = file.readline()
+    line = line[0:len(line)-1]
+    number_of_posts = int(line)
+    print(number_of_posts)
+    file.close()
     d = vk.method('newsfeed.get',
-                  {'filters': 'post', 'return_banned': 1, 'start_time': time.time() - 86400, 'end_time': time.time(),
-                   'source_ids': id_group, 'count': 50})['items']
+                  {'filters': 'post', 'return_banned': 1, 'start_time': time.time() - monitoring_time*3600, 'end_time': time.time(),
+                   'source_ids': id_group, 'count': number_of_posts})['items']
     j = 0
     main_last_index = 0
     while j < len(d):
@@ -78,7 +89,7 @@ def likers():
             n = 0
             while n < len(h):
                 t = find(likers, h[n], main_last_index)
-                if t == -1:
+                if t == -1 and isbanned(h[n])!=-1:
                     likers[main_last_index + 1][0] = h[n]
                     likers[main_last_index + 1][1] += 1
                     main_last_index += 1
@@ -102,6 +113,7 @@ def likers():
     f.close()
     index_big=[[0 for i in range(2)] for i in range(n_max)]
     j=0
+    print(likers)
     #zapolnenie massiva index_big naibolshymi elementami
     while j<n_max :
         max = 0
@@ -123,7 +135,7 @@ def likers():
     p=0
     # zapis v fail resultatov
     while j<len(index_big):
-        if p<n_max-6  and myfind(massiv_exceptions,index_big[j][0],len_massiv-1)==-1 and isbanned(index_big[j][0])!=-1:
+        if p<n_max-6  and myfind(massiv_exceptions,index_big[j][0],2)==-1:
             f.write('like '+str(index_big[j][0])+' '+str(index_big[j][1])+'\n')
             p+=1
         j=j+1
@@ -135,14 +147,9 @@ def file_output(name, output):
 	file.write(output)
 	file.close()
 
-
-
-if(__name__ == "__main__"): 
-    if(len(sys.argv) == 1):
-        likers()
-    else:
-        while 1: 
-            file_output("liker_pid", str(os.getpid())) 
-            file_output("liker_time", str(time.localtime()[3])+" "+str(time.localtime()[4])) 
-            likers()
-            print('hoi')
+def main():
+	while 1:
+		file_output("liker_pid", str(os.getpid()))
+		file_output("liker_time", str(time.localtime()[3])+" "+str(time.localtime()[4]))
+		liker()
+main()
