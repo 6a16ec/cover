@@ -1,6 +1,6 @@
 import time, os
 
-dir = ''
+dir = '/home/user/cover/files/'
 work_direction = dir[:-6]
 
 def file_input(name):

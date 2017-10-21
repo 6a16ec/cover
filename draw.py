@@ -3,7 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
 from pycbrf.toolbox import ExchangeRates
 from letters import letters
-dir = '/home/user/newcover/cover/files/'
+dir = '/home/user/cover/files/'
 cover_name = 'cover.png'
 template = 'template.png'
 

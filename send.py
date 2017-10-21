@@ -1,7 +1,7 @@
 import vk_api, requests
 from PIL import Image
 
-dir = ''
+dir = '/home/user/cover/files/'
 cover_name = 'cover.png'
 template = 'template.png'
 

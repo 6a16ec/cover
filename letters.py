@@ -2,7 +2,7 @@
 import time, vk_api, requests
 from PIL import Image, ImageDraw, ImageFont
 from datetime import datetime
-dir = '/home/user/newcover/cover/files/'
+dir = '/home/user/cover/files/'
 def auth():
 	# read data from file
 	file = open(dir+'account', 'r')
@@ -103,7 +103,7 @@ def letters():
 			res = requests.get("http://api.openweathermap.org/data/2.5/weather",
 							   params={'id': city_id, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
 			data = res.json()
-			uni = str(data['main']['temp'])[0:2] + "°" + "C"
+			uni = str(int(float(str(data['main']['temp'])))) + "°" + "C"
 			if uni[0] != "-":
 				uni = "+" + uni
 			temperature_stroka = uni

@@ -3,7 +3,7 @@ add_widget = "" # not correct
 add_other_widget = "" # not correct
 
 # information for vk
-phone_number_or_email = '89036051506'
+phone_number_or_email = '89307166797'
 password = 'nigerok'
 api_key = '30baf5175778d3092278afa12d08117ee7b20d4b8c58c0bf687921f840043fde7bb382cc38004c8bfdbbb'
 group_id = '83678526'
@@ -11,32 +11,32 @@ group_id = '83678526'
 exceptions = ''
 
 ## widgets ##
-most_popular_comment = 'off'		# 'on' or 'off' 
+most_popular_comment = 'off'		# 'on' or 'off'
 most_popular_comments_count = '0'	# the number of such elements
-add_widget += "comment" 
+add_widget += "comment"
 
 
-most_active_commentator = 'on'		# 'on' or 'off' 
-most_active_commentators_count = '1'	# the number of such elements
-add_widget += "commentator 35 122 100 135 146 120 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 255 255 0 15 60 2\n" 
+most_active_commentator = 'off'		# 'on' or 'off'
+most_active_commentators_count = '0'	# the number of such elements
+add_widget += "commentator"
 
-most_active_reposter = 'on'		# 'on' or 'off' 
-most_active_reposters_count = '1'	# the number of such elements
-add_widget += "repost 270 27 340 40 384 25 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 255 255 0 15 60 2\n" 
+most_active_reposter = 'off'		# 'on' or 'off'
+most_active_reposters_count = '0'	# the number of such elements
+add_widget += "repost"
 
-most_active_liker = 'on'		# 'on' or 'off' 
-most_active_likers_count = '1'		# the number of such elements
-add_widget += "liker 35 27 100 40 146 25 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 255 255 0 15 60 2\n" 
+most_active_liker = 'off'		# 'on' or 'off'
+most_active_likers_count = '0'		# the number of such elements
+add_widget += "liker"
 array_size = '1000' # whaaaaaaaaat!!!??!?!?!!?
 
-last_subscriber = 'on'			# 'on' or 'off' 
-last_subscribers_count = '1'		# the number of such elements
-add_widget += "subscriber 270 122 340 135 0 0 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 255 255 0 15 60 2\n" 
+last_subscriber = 'off'			# 'on' or 'off'
+last_subscribers_count = '0'		# the number of such elements
+add_widget += "subscriber"
 
 time = 'on'			# 'on' or 'off' 
-add_other_widget += "time 680 155 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 240 230 140 30\n"
+add_other_widget += "time 1425 90 /home/user/cover/files/RobotoCondensed-Regular.ttf 255 255 255 47\n"
  
-add_other_widget += "temperature 664 5 /usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf 240 230 140 30 Vladimir,RU\n" 
+add_other_widget += "temperature 1475 39 /home/user/cover/files/RobotoCondensed-Regular.ttf 255 255 255 30 Vladimir,RU\n"
 # monitoring config
 monitoring_time = '24' # number of hours (write '-1' to monitoring this day)
 number_of_posts = '50'

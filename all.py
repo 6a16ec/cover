@@ -9,7 +9,7 @@ from letters import letters
 from draw import draw
 from send import send
 
-dir = '/home/user/newcover/cover/files/'
+dir = '/home/user/cover/files/'
 
 def file_input(name):
 	file_name = dir + name
@@ -48,7 +48,7 @@ def main():
 			# print("comments ok", time.time() - last_time)
 			# reposts()
 			# print("reposts ok", time.time() - last_time)
-			subscribers()
+			#subscribers()
 			#print("subscribers ok")
 			results()
 			print("results ok")

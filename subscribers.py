@@ -1,7 +1,7 @@
 import time, vk_api
 
 
-dir = ''
+dir = '/home/user/cover/files/'
 
 def file_input(name):
 	file_name = dir + name
